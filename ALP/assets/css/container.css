@@ -83,6 +83,7 @@ body{
 
 .sidebar header a{
 	text-decoration:none;
+	display: block;
 }
 
 .sidebar nav {

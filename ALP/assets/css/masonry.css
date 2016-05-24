@@ -21,6 +21,9 @@
 	margin-bottom: 0.25%;
 }
 
+.grid-item  a{  
+		display: block;
+}
 
 .grid-item  img{
 	display:block;
@@ -53,19 +56,8 @@
 	
 	.grid-item  a{  
 		pointer-events: none;
-		disabled: disabled;
 		cursor: default;
 	}
 	
-	.grid-item  img{  
-		pointer-events: none;
-		cursor: default;
-	}
-	
-	.not-active {
-		pointer-events: none;
-		-webkit-any-link pointer-events: none;
-		cursor: default;
-	}
 	
 }
