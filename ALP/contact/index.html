@@ -18,7 +18,7 @@
 
 <style>
 
-	#container{
+	#wrapper{
 		opacity:0;
 		transition: opacity 1s;
 		-webkit-transition: opacity 1s;
@@ -62,7 +62,7 @@
   
   
   
-<div id="maincontent">
+<div id="wrapper">
       
     <div id="imageWrapper">  
     	<img src="../assets/img/contact.jpg" alt="Alexander Lux Photography" width="100%">
@@ -74,7 +74,7 @@
         <hr class="symbol" width="95%">
         <p class="contact_info">Phone: 0403294213941</p>
         <p class="contact_info"><b>info@alexanderluxphotography.com</b></p>
-        <a href="https://www.facebook.com/alexander.lux.31" target="_blank"><img src="../assets/img/fb-icon.png" alt="facebook" width="100%"/></a>
+        <a href="https://www.facebook.com/alexander.lux.31" target="_blank"><img src="../assets/img/fb-icon.png" width="100%"/></a>
 	</div>
     
 </div>
@@ -88,7 +88,7 @@
 
 <script>
 	function loadFunc(){
-		var element = document.getElementById('container');
+		var element = document.getElementById('wrapper');
 		console.log(element);
 		element.style.opacity = "1";
 		element.style.filter  = 'alpha(opacity=100)';	
