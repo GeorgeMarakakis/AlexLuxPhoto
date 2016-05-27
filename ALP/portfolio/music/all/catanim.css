@@ -1,0 +1,85 @@
+/* ----- Category Animation ----- */
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+
+
+.grid {
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.grid li {
+	display: block;/*inline-block*/
+	float: left;
+	width: 32.5%;
+	margin-right: 0.25%;
+	margin-bottom:0.25%;
+	opacity: 0;
+}
+
+.grid li.shown,
+.no-js .grid li,
+.no-cssanimations .grid li {
+	opacity: 1;
+}
+
+.grid li a,
+.grid li img {
+	outline: none;
+	border: none;
+	display: block;
+	width: 100%;
+}
+
+/* Effect 1: opacity */
+.grid.effect-1 li.animate {
+	-webkit-animation: fadeIn 0.65s ease forwards;
+	animation: fadeIn 0.65s ease forwards;
+}
+
+@-webkit-keyframes fadeIn {
+	0% { }
+	100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+	0% { }
+	100% { opacity: 1; }
+}
+
+
+
+
+
+@media screen and (max-width: 1199px) {
+	
+	.grid {
+		width: 93%;
+		margin-left: 30px;
+	}
+	
+	.grid  li{
+		margin-right: 0.5%;
+		margin-bottom: 0.5%;
+	}
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+	
+	.grid {
+		width: 99%;
+		margin-left: 0;
+	}
+	
+	.grid li {
+		width: 100%;
+		margin-bottom: 1%;
+		pointer-events: none;
+		cursor: default;
+	}
+}
