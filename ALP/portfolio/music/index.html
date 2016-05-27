@@ -16,19 +16,16 @@
 
 <link href="../../assets/css/container.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/wrapper.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/masonry.css" rel="stylesheet" type="text/css">
 
-<script src="../../assets/js/jquery-1.11.3.min.js"></script>
-<script src="../../assets/js/masonry.pkgd.min.js"></script> 
-<script src="../../assets/js/imagesloaded.pkgd.min.js"></script>
-
+<script src="../../assets/js/modernizr.custom.js"></script>
 
 </head>
 
 
 
 
-<body><!--onLoad="loadFunc()"-->
+
+<body>
 
 <div id="container">
 	<div class="sidebar"> 
@@ -58,114 +55,108 @@
     
     
     
-    <div id="maincontent">
+    <div id="wrapper">
     
     
         
         
-			<div class="grid">
-			
-			
-				<div class="grid-sizer"></div>
-			
-            
-  
+			<ul class="grid effect-1" id="grid">
+				
             
 
 
-                <div class="grid-item">
+                <li>
 					<a href="slider.html?img=1&cat=music">
                         <img src="../../assets/img/portfolio/music/music1.jpg">
 					</a>
-                </div>
+                </li>
                 
-                <div class="grid-item">
-					<a class="not-active" href="slider.html?img=2&cat=music">
+                <li>
+					<a href="slider.html?img=2&cat=music">
                         <img src="../../assets/img/portfolio/music/music2.jpg">
 					</a>
-                </div>
+                </li>
                 
-                <div class="grid-item">
+                <li>
 					<a href="slider.html?img=3&cat=music">
                         <img src="../../assets/img/portfolio/music/music3.jpg">
 					</a>
-                </div>
+                </li>
                 
-                <div class="grid-item">
+                <li>
 					<a href="slider.html?img=4&cat=music">
                         <img src="../../assets/img/portfolio/music/music4.jpg">
 					</a>
-                </div>
+                </li>
                 
-               	<div class="grid-item">
+               	<li>
 					<a href="slider.html?img=5&cat=music">
                         <img src="../../assets/img/portfolio/music/music5.jpg">
 					</a>
-                </div>
+                </li>
             
-            	<div class="grid-item">
+            	<li>
 					<a href="slider.html?img=6&cat=music">
                         <img src="../../assets/img/portfolio/music/music6.jpg">
 					</a>
-                </div>
+                </li>
                 
-                <div class="grid-item">
+                <li>
 					<a href="slider.html?img=7&cat=music">
                         <img src="../../assets/img/portfolio/music/music7.jpg">
 					</a>
-                </div>
+                </li>
                 
-                <div class="grid-item">
+                <li>
 					<a href="slider.html?img=8&cat=music">
                         <img src="../../assets/img/portfolio/music/music8.jpg">
 					</a>
-                </div>
+                </li>
                 
-				<div class="grid-item">
+				<li>
 					<a href="slider.html?img=9&cat=music">
                         <img src="../../assets/img/portfolio/music/music9.jpg">
 					</a>
-                </div>
+                </li>
                 
-                <div class="grid-item">
+                <li>
 					<a href="slider.html?img=10&cat=music">
                         <img src="../../assets/img/portfolio/music/music10.jpg">
 					</a>
-                </div>
+                </li>
                 
-                <div class="grid-item">
+                <li>
 					<a href="slider.html?img=11&cat=music">
                         <img src="../../assets/img/portfolio/music/music11.jpg">
 					</a>
-                </div>
+                </li>
                 
-                <div class="grid-item">
+                <li>
 					<a href="slider.html?img=12&cat=music">
                         <img src="../../assets/img/portfolio/music/music12.jpg">
 					</a>
-                </div>
+                </li>
                 
+            </ul> 
+
+		
                 
-                
-            </div>
-            
-            
     </div>
+            
+            
+    
 </div>
-
-<script>
-	
-	// init Masonry
-var $grid = $('.grid').masonry({
-  itemSelector: '.grid-item',
-  percentPosition: true,
-  columnWidth: '.grid-sizer'
-});
-// layout Isotope after each image loads
-$grid.imagesLoaded().progress( function() {
-  $grid.masonry();
-});
-
-</script>
+		<script src="../../assets/js/masonry.pkgd.min.js"></script>
+		<script src="../../assets/js/imagesloaded.js"></script>
+		<script src="../../assets/js/classie.js"></script>
+		<script src="../../assets/js/AnimOnScroll.js"></script>
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
+		
 </body>
 </html>

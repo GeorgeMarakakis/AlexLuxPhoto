@@ -7,22 +7,24 @@
 This file styles the layout of following tags:
 
 -wrapper
+-grid
 -category
--column
--image-wrapper
+-grid list (image-wrapper)
+-opacity effect
 
 which are very basic elements of the site
 ------------------------------------------*/
 
-/* Main Content */
+/* ----- Category Animation ----- */
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
 
-#maincontent{
+/* Wrapper */
+
+#wrapper{
 	float: left;
 	width: 74%;
 }
-
-
-
 
 
 
@@ -72,20 +74,51 @@ which are very basic elements of the site
 
 /*------------Street/Music/Portrait/Wallpaper.html--------------*/
 
-.column{
+.grid {
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.grid li {
+	display: block;/*inline-block*/
+	float: left;
 	width: 32.5%;
-	display:inline-block;
-	
+	margin-right: 0.25%;
+	margin-bottom:0.25%;
+	opacity: 0;
 }
 
-.imgExt{
+.grid li.shown,
+.no-js .grid li,
+.no-cssanimations .grid li {
+	opacity: 1;
+}
+
+.grid li a,
+.grid li img {
+	outline: none;
+	border: none;
+	display: block;
 	width: 100%;
 }
 
-.imgInt{
-	width: 100%;
+/* Effect 1: opacity */
+.grid.effect-1 li.animate {
+	-webkit-animation: fadeIn 0.65s ease forwards;
+	animation: fadeIn 0.65s ease forwards;
 }
 
+@-webkit-keyframes fadeIn {
+	0% { }
+	100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+	0% { }
+	100% { opacity: 1; }
+}
 
 
 
@@ -93,9 +126,19 @@ which are very basic elements of the site
 	@media screen and (max-width:1199px) {
 	
 			
-			#maincontent {
+			#wrapper {
 				width:99%;
 				margin-left: 1%;
+			}
+			
+			#grid{
+				width: 93%;
+				margin-left: 30px;
+			}
+			
+			.grid  li{
+				margin-right: 0.5%;
+				margin-bottom: 0.5%;
 			}
 	
 	}
@@ -109,36 +152,26 @@ which are very basic elements of the site
 		
 		
 		
-			#maincontent {
+			#wrapper {
 				margin-top:5%;
-			}			
+			}
 
-			
-			
+			#grid {
+				width: 99%;
+				margin-left: 0;
+			}
 			
 			.category {
-				width: 99%;			
+				width: 100%;
 			}
-			
-			
-			
-			
-			.column {
-			width:100%;
-			}
-			
-			
-			
-			.not-active {
+
+			.grid li {
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: 1%;
 				pointer-events: none;
 				cursor: default;
 			}
-			
-			
-			
-			.imgInt{
-				width: 99%;
-			}	
 		
 
 	
