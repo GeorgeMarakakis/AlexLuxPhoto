@@ -20,7 +20,7 @@ which are the basic elements of the image slider
 		width:100%;
 }
 
-#wrapper {
+#maincontent {
 		margin-top:85px;
 		width:76%;
 		
@@ -187,7 +187,7 @@ span a:visited {
 			width:350px;
 		}
 	
-		#wrapper {
+		#maincontent {
 			width:99%;
 			margin-bottom:1%;
 		}

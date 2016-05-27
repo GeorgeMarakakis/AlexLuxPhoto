@@ -17,7 +17,7 @@
 
 <style>
 
-	#wrapper{
+	#maincontent{
 		opacity:0;
 		transition: opacity 1s;
 		-webkit-transition: opacity 1s;
@@ -29,7 +29,7 @@
 
 <body onload="loadFunc()">
 
-<div id="container">
+<div id="container"> <!--class="container"-->
 	<div class="sidebar"> 
     	<header id="logo">
             <a href="../">
@@ -59,10 +59,7 @@
     
     <!--Categories-->
     
-    <div id="wrapper">
-	
-	
-		<div id="grid">
+    <div id="maincontent">
     
         
             <div class="category">
@@ -96,17 +93,13 @@
                 </a>
                 <hr>
             </div>
-			
-			
-			
-		</div>
         
 		
     </div>
 </div>
 <script>
 	function loadFunc(){
-		var element = document.getElementById('wrapper');
+		var element = document.getElementById('maincontent');
 		element.style.opacity = "1";
 		element.style.filter  = 'alpha(opacity=100)';	
 	}

@@ -19,7 +19,6 @@
 	width: 32.5%;
 	margin-right: 0.5%;
 	margin-bottom: 0.25%;
-	opacity: 0;
 }
 
 .grid-item  a{  
@@ -29,24 +28,6 @@
 .grid-item  img{
 	display:block;
 	width:100%;
-}
-
-
-
-/* Effect opacity */
-.grid-item.animate {
-	-webkit-animation: fadeIn 0.65s ease forwards;
-	animation: fadeIn 0.65s ease forwards;
-}
-
-@-webkit-keyframes fadeIn {
-	0% { }
-	100% { opacity: 1; }
-}
-
-@keyframes fadeIn {
-	0% { }
-	100% { opacity: 1; }
 }
 
 

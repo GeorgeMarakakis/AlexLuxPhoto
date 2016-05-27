@@ -7,8 +7,8 @@ var param = 1;
 var cat = null;
 
 var scaledVal = [];
-var wrapper_width;
-var wrapper_height;
+var mainContent_width;
+var mainContent_height;
 
 $( document ).ready(function() {
     // First you forcibly request the scroll bars to hidden regardless if they will be needed or not.
@@ -25,14 +25,14 @@ $( document ).ready(function() {
 		$('body').css('overflow', 'hidden');
 	}
 		
-	wrapper_width = 0.73*x;		
-	wrapper_height = y-100;		//10px margin-bottom(#slider) and 85px margin-top(#wrapper)
+	mainContent_width = 0.73*x;		
+	mainContent_height = y-100;		//10px margin-bottom(#slider) and 85px margin-top(#maincontent)
 	
-	//console.log("Dimensions of wrapper (1) : "+wrapper_width+" x "+wrapper_height);
+	//console.log("Dimensions of maincontent (1) : "+mainContent_width+" x "+mainContent_height);
 });
 
 function loadFunc(){
-		var element = document.getElementById('wrapper');
+		var element = document.getElementById('maincontent');
 		element.style.opacity = "1";
 		element.style.filter  = 'alpha(opacity=100)';
 		initializeSlider();	
@@ -57,7 +57,7 @@ function initializeSlider(){
   			var orgHeight = tmpImg.height;
 			var windowWidth = $(window).width();
 			
-			scaledVal = calculateScale(orgWidth,orgHeight,wrapper_width,wrapper_height,windowWidth);
+			scaledVal = calculateScale(orgWidth,orgHeight,mainContent_width,mainContent_height,windowWidth);
 			
 			
 			$("#image").css({"width":scaledVal[0]+"px", "height":scaledVal[1]+"px", "margin":"auto", "position":"relative", "display":"block"});			
@@ -97,7 +97,7 @@ function photo(x) {
 	var window_width = $(window).width();
 	
 	if(window_width <= 1199){	//If it's a tablet then focus on the image slider in the transition
-		window.location.assign("slider.html?img="+param+"&cat="+cat+"#wrapper");
+		window.location.assign("slider.html?img="+param+"&cat="+cat+"#maincontent");
 	}
 	else{
 		window.location.assign("slider.html?img="+param+"&cat="+cat);
@@ -112,14 +112,14 @@ function go_to_thumbnails(){
 
 
 //Function for Scale calculation of initial image's dimensions	
-function calculateScale(orgWidth,orgHeight,wrapper_width,wrapper_height,windowWidth){
+function calculateScale(orgWidth,orgHeight,mainContent_width,mainContent_height,windowWidth){
 
 	var scaledDim = [];		
 	scaledDim[0] = 0;	//scaled width
 	scaledDim[1] = 0;	//scaled height
 
 	//Calculate Scale ratio of width
-	var ScaleRatio = wrapper_width/orgWidth;
+	var ScaleRatio = mainContent_width/orgWidth;
 	
 	//screen-width is more than 1200px
 	if (windowWidth>=1200) {
@@ -127,23 +127,23 @@ function calculateScale(orgWidth,orgHeight,wrapper_width,wrapper_height,windowWi
 			//If scale ratio >= 1.00 then check if the scale against the height of the image is bigger
 			if(ScaleRatio >= 1){
 				
-				//Check if Scale ratio fits in the wrapper against the height of the div
-				if(ScaleRatio <= wrapper_height/orgHeight){
+				//Check if Scale ratio fits in the maincontent against the height of the div
+				if(ScaleRatio <= mainContent_height/orgHeight){
 					scaledDim[0] = ScaleRatio * orgWidth;
 					scaledDim[1] = ScaleRatio * orgHeight;
 				}
 				//Calculate new Scale ratio by image's height
 				else{
-					ScaleRatio = wrapper_height/orgHeight;
+					ScaleRatio = mainContent_height/orgHeight;
 					scaledDim[0] = ScaleRatio * orgWidth;
 					scaledDim[1] = ScaleRatio * orgHeight;
 				}
 				
 			}
-			else{	//Doesn't fit in the width of wrapper
+			else{	//Doesn't fit in the width of maincontent
 			
-				var Scale1 = wrapper_width/orgWidth;
-				var Scale2 = wrapper_height/orgHeight;
+				var Scale1 = mainContent_width/orgWidth;
+				var Scale2 = mainContent_height/orgHeight;
 				
 				if(Scale1 < Scale2){
 				

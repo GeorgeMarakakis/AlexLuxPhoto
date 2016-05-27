@@ -7,24 +7,22 @@
 This file styles the layout of following tags:
 
 -wrapper
--grid
 -category
--grid list (image-wrapper)
--opacity effect
+-column
+-image-wrapper
 
 which are very basic elements of the site
 ------------------------------------------*/
 
-/* ----- Category Animation ----- */
-*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-body, html { font-size: 100%; padding: 0; margin: 0;}
+/* Main Content */
 
-/* Wrapper */
-
-#wrapper{
+#maincontent{
 	float: left;
 	width: 74%;
 }
+
+
+
 
 
 
@@ -74,51 +72,20 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 
 /*------------Street/Music/Portrait/Wallpaper.html--------------*/
 
-.grid {
-	width: 100%;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.grid li {
-	display: block;/*inline-block*/
-	float: left;
+.column{
 	width: 32.5%;
-	margin-right: 0.25%;
-	margin-bottom:0.25%;
-	opacity: 0;
+	display:inline-block;
+	
 }
 
-.grid li.shown,
-.no-js .grid li,
-.no-cssanimations .grid li {
-	opacity: 1;
-}
-
-.grid li a,
-.grid li img {
-	outline: none;
-	border: none;
-	display: block;
+.imgExt{
 	width: 100%;
 }
 
-/* Effect 1: opacity */
-.grid.effect-1 li.animate {
-	-webkit-animation: fadeIn 0.65s ease forwards;
-	animation: fadeIn 0.65s ease forwards;
+.imgInt{
+	width: 100%;
 }
 
-@-webkit-keyframes fadeIn {
-	0% { }
-	100% { opacity: 1; }
-}
-
-@keyframes fadeIn {
-	0% { }
-	100% { opacity: 1; }
-}
 
 
 
@@ -126,19 +93,9 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 	@media screen and (max-width:1199px) {
 	
 			
-			#wrapper {
+			#maincontent {
 				width:99%;
 				margin-left: 1%;
-			}
-			
-			#grid{
-				width: 93%;
-				margin-left: 30px;
-			}
-			
-			.grid  li{
-				margin-right: 0.5%;
-				margin-bottom: 0.5%;
 			}
 	
 	}
@@ -152,26 +109,36 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 		
 		
 		
-			#wrapper {
+			#maincontent {
 				margin-top:5%;
-			}
+			}			
 
-			#grid {
-				width: 99%;
-				margin-left: 0;
-			}
+			
+			
 			
 			.category {
-				width: 100%;
+				width: 99%;			
 			}
-
-			.grid li {
-				width: 100%;
-				margin-right: 0;
-				margin-bottom: 1%;
+			
+			
+			
+			
+			.column {
+			width:100%;
+			}
+			
+			
+			
+			.not-active {
 				pointer-events: none;
 				cursor: default;
 			}
+			
+			
+			
+			.imgInt{
+				width: 99%;
+			}	
 		
 
 	
