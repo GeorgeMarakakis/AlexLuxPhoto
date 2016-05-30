@@ -74,6 +74,10 @@ body{
 	margin-left: 10px;
 }
 
+#logo img{
+	width: 300px;
+}
+
 #horizontal_line{
 	color: #000000;
 	display: block;

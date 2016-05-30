@@ -17,9 +17,31 @@
 <link href="../../assets/css/container.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/wrapper.css" rel="stylesheet" type="text/css">
 
+<script src="../../assets/js/jquery-1.11.3.min.js"></script>
+<script src="../../assets/js/imagesloaded.pkgd.min.js"></script>
 <script src="../../assets/js/modernizr.custom.js"></script>
 
-<script src="../../assets/js/jquery-1.11.3.min.js"></script>
+<style>
+ 	
+	.is-loading {
+  		background-color: black;
+  		background: url('../../assets/img/loading.gif');
+  		background-repeat:no-repeat;
+  		background-position:center center;
+	}
+
+	.is-broken {
+	  background: url('../../assets/img/broken.png') no-repeat center center fixed;
+	  background-color: #be3730;
+	  width: 120px;
+	}
+
+	.is-loading img,
+	.is-broken img {
+	  opacity: 0;
+	}
+
+</style>
 
 </head>
 
@@ -67,31 +89,31 @@
             
 
 
-                <li>
+                <li style="opacity:1;">
 					<a href="slider.html?img=1&cat=music">
                         <img src="../../assets/img/portfolio/music/music1.jpg">
 					</a>
                 </li>
                 
-                <li>
+                <li style="opacity:1;">
 					<a href="slider.html?img=2&cat=music">
                         <img src="../../assets/img/portfolio/music/music2.jpg">
 					</a>
                 </li>
                 
-                <li>
+                <li style="opacity:1;">
 					<a href="slider.html?img=3&cat=music">
                         <img src="../../assets/img/portfolio/music/music3.jpg">
 					</a>
                 </li>
                 
-                <li>
+                <li style="opacity:1;">
 					<a href="slider.html?img=4&cat=music">
                         <img src="../../assets/img/portfolio/music/music4.jpg">
 					</a>
                 </li>
                 
-               	<li>
+               	<li style="opacity:1;">
 					<a href="slider.html?img=5&cat=music">
                         <img src="../../assets/img/portfolio/music/music5.jpg">
 					</a>
@@ -148,6 +170,29 @@
             
     
 </div>
+
+<script>
+ 	var $container = $('#wrapper');
+	
+	$(document).ready(function(e) {
+		$( ".grid li" ).addClass("is-loading");
+		$container.imagesLoaded()
+    		.progress( onProgress );
+		
+    });
+	
+	// triggered after each item is loaded
+	function onProgress( imgLoad, image ) {
+  		// change class if the image is loaded or broken
+  		var $item_div = $( image.img ).parent().parent();
+		$item_div.removeClass('is-loading');
+  		if ( !image.isLoaded ) {
+    		$item.addClass('is-broken');
+  		}
+	}
+	
+</script>
+
 		<script src="../../assets/js/masonry.pkgd.min.js"></script>
 		<script src="../../assets/js/imagesloaded.js"></script>
 		<script src="../../assets/js/classie.js"></script>
@@ -181,6 +226,6 @@
 				return false;
 			});
 		</script>
-		
+
 </body>
 </html>

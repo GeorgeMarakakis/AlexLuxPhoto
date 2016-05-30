@@ -17,30 +17,21 @@
 <link href="../../assets/css/container.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/wrapper.css" rel="stylesheet" type="text/css">
 
+<script src="../../assets/js/jquery-1.11.3.min.js"></script>
+<script src="../../assets/js/imagesloaded.pkgd.min.js"></script>
 <script src="../../assets/js/modernizr.custom.js"></script>
 
-<script src="../../assets/js/jquery-1.11.3.min.js"></script>
-
-<!-- <script src="../../assets/js/jquery-1.11.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
-
 <style>
-
-	#wrapper{
-		opacity:0;
-		transition: opacity 1s;
-		-webkit-transition: opacity 1s;
-	}
  	
 	.is-loading {
   		background-color: black;
-  		background: url('http://www.enb.gov.hk/sites/all/modules/kanhan_AQHIbox/img/loading.gif');
+  		background: url('../../assets/img/loading.gif');
   		background-repeat:no-repeat;
   		background-position:center center;
 	}
 
 	.is-broken {
-	  background: url('http://desandro.github.io/imagesloaded/assets/broken.png') no-repeat center center fixed;
+	  background: url('../../assets/img/broken.png') no-repeat center center fixed;
 	  background-color: #be3730;
 	  width: 120px;
 	}
@@ -49,13 +40,16 @@
 	.is-broken img {
 	  opacity: 0;
 	}
- 
 
 </style>
--->
+
 </head>
 
-<body>
+
+
+
+
+<body> <!-- onload="loadFunc()" -->
 
 <div id="container">
 	<div class="sidebar"> 
@@ -95,31 +89,31 @@
 			
 				
                 
-				<li>
+				<li style="opacity:1;">
 					<a href="slider.html?img=1&cat=portrait">
                         <img src="../../assets/img/portfolio/portrait/portrait1.jpg">
 					</a>
                 </li>
                 
-                <li>
+                <li style="opacity:1;">
 					<a href="slider.html?img=2&cat=portrait">
                         <img src="../../assets/img/portfolio/portrait/portrait2.jpg">
 					</a>
                 </li>
                 
-                <li>
+                <li style="opacity:1;">
 					<a href="slider.html?img=3&cat=portrait">
                         <img src="../../assets/img/portfolio/portrait/portrait3.jpg">
 					</a>
                 </li>
                 
-                <li>
+                <li style="opacity:1;">
 					<a href="slider.html?img=4&cat=portrait">
                         <img src="../../assets/img/portfolio/portrait/portrait4.jpg">
 					</a>
                 </li>
                 
-               	<li>
+               	<li style="opacity:1;">
 					<a href="slider.html?img=5&cat=portrait">
                         <img src="../../assets/img/portfolio/portrait/portrait5.jpg">
 					</a>
@@ -228,6 +222,36 @@
             
     </div>
 </div>
+
+<script>
+ 	var $container = $('#wrapper');
+	
+	$(document).ready(function(e) {
+		$( ".grid li" ).addClass("is-loading");
+		$container.imagesLoaded()
+    		.progress( onProgress );
+		
+    });
+	
+	// triggered after each item is loaded
+	function onProgress( imgLoad, image ) {
+  		// change class if the image is loaded or broken
+  		var $item_div = $( image.img ).parent().parent();
+		$item_div.removeClass('is-loading');
+  		if ( !image.isLoaded ) {
+    		$item.addClass('is-broken');
+  		}
+	}
+	
+</script>
+
+<!-- <script>
+	function loadFunc(){
+		var element = document.getElementById('wrapper');
+		element.style.opacity = "1";
+		element.style.filter  = 'alpha(opacity=100)';	
+	}
+</script> -->
 		<script src="../../assets/js/masonry.pkgd.min.js"></script>
 		<script src="../../assets/js/imagesloaded.js"></script>
 		<script src="../../assets/js/classie.js"></script>
@@ -261,6 +285,11 @@
 				return false;
 			});
 		</script>
+		
+		
+		
+		
+		
 <!--<script>
 	
 	// init Masonry
@@ -274,32 +303,9 @@ $grid.imagesLoaded().progress( function() {
   $grid.masonry();
 });
 
-</script>
- <script>
-	function loadFunc(){
-		var element = document.getElementById('wrapper');
-		element.style.opacity = "1";
-		element.style.filter  = 'alpha(opacity=100)';	
-	}
-/* 	var $container = $('#wrapper');
-	
-	$(document).ready(function(e) {
-		$( ".imgExt" ).addClass("is-loading");
-		$container.imagesLoaded()
-    		.progress( onProgress );
-		
-    });
-	
-	// triggered after each item is loaded
-	function onProgress( imgLoad, image ) {
-  		// change class if the image is loaded or broken
-  		var $item_div = $( image.img ).parent().parent();
-		$item_div.removeClass('is-loading');
-  		if ( !image.isLoaded ) {
-    		$item.addClass('is-broken');
-  		}
-	}
-*/	
 </script> -->
+
+
+
 </body>
 </html>
