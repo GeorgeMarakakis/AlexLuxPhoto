@@ -16,6 +16,13 @@
     	text-shadow: none;
 	}
 
+	#container{
+		-webkit-user-select: auto;
+		-khtml-user-select: auto;
+		-moz-user-select: auto;
+		-ms-user-select: auto;
+		user-select: auto;
+	}
 	
 	#imageWrapper {
 		max-width: 1200px;

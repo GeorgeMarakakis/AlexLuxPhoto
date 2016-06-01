@@ -16,6 +16,14 @@
     	text-shadow: none;
 	}
 	
+	#container{
+		-webkit-user-select: auto;
+		-khtml-user-select: auto;
+		-moz-user-select: auto;
+		-ms-user-select: auto;
+		user-select: auto;
+	}
+	
 	#wrapper {
 		display:inline-block;
 	}
