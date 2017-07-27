@@ -1,8 +1,5 @@
 # AlexLuxPhoto
-Portfolio Website
+Portfolio Website of photographer Alexander Lux.
 
-@KostasD21
-The folder:   "../assets/img/"   is missing due to reduction of uploading time...!
-In order to run properly, just place a copy of yours after you have downloaded a version.
-
-DO NOT upload it!
+The old, but up and running, website: http://www.alexander-lux.com/home/
+The redesigned website (demo): http://users.isc.tuc.gr/~gmarakakis/
